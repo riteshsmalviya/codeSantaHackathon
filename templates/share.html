@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Share-{% endblock title %}
+{% block body %}
+<div style="font-family: 'Viga', sans-serif;" class=" container mx-auto flex flex-col px-5 py-12 justify-center items-center h-full">
+    <form method="post" action="/share" class="w-full">
+        {% csrf_token %}
+    <div class="relative mb-4">
+        <label for="program" class="leading-7 text-sm text-gray-900">Write A Program To</label>
+        <textarea id="program" name="program" class=" w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out " rows="1"></textarea>
+    </div>
+    <div class="relative mb-4">
+        <label for="language" class="leading-7 text-sm text-gray-900">Language</label>
+        <select id="language" name="language">
+            <option value="c">C</option>
+            <option value="c++">C++</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="js">JavaScript</option>
+            <option value="sql">SQL</option>
+          </select>
+    </div>
+    <div class="relative mb-4">
+        <label for="code" class="leading-7 text-sm text-gray-900">Code</label>
+        <textarea id="code" name="code" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-64 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" rows="3"></textarea>
+    </div>
+    <button type="submit" class="cursor-pointer text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+    
+</form>
+</div>
+
+{% endblock body %}
